@@ -8,7 +8,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: blueviolet;
             margin: 0;
             border: 0px;
             display: flex;
@@ -16,15 +15,6 @@
             align-items: center;
             min-height: 100vh;
             animation: bgAnimation 5s infinite alternate;
-        }
-
-        @keyframes bgAnimation {
-            0% {
-                background-color: blueviolet;
-            }
-            100% {
-                background-color: darkorchid;
-            }
         }
 
         #container {
@@ -35,16 +25,6 @@
             animation: slideIn 1s ease forwards;
         }
 
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         h1 {
             color: black;
@@ -65,7 +45,7 @@
         input[type="text"],
         input[type="number"],
         textarea {
-            width: 100%;
+            width: 90%;
         }
 
         button {
