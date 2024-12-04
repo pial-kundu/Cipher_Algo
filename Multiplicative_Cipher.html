@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplicative Cipher</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: blueviolet;
+  }
+  .container {
+    background-color: aquamarine;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <button ><a href="index.html" style="text-decoration: none;">Back</a></button>
+  <h2>Multiplicative Cipher</h2>
+
+  <textarea id="inputText" placeholder="Enter your message"></textarea>
+  <br>
+  <label for="key">Enter a key (must be coprime with 26):</label>
+  <br>
+  <input type="number" id="key" placeholder="Enter a number" min="1" required>
+  <br>
+  <button onclick="encrypt()">Encrypt</button>
+  <button onclick="decrypt()">Decrypt</button>
+
+  <div id="output"></div>
+</div>
+
+<script src="multiplicativecipher.js"></script>
+
+</body>
+</html>

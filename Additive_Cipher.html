@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Additive Cipher</title>
+  <script src="additivecipher.js"></script>
+  <style>
+    body {
+        margin: 0;
+        border: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: blueviolet;
+        animation: bgAnimation 5s infinite alternate;
+    }
+
+    @keyframes bgAnimation {
+        0% {
+            background-color: blueviolet;
+        }
+        100% {
+            background-color: darkorchid;
+        }
+    }
+
+    div {
+        background-color: aquamarine;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        animation: slideIn 1s ease forwards;
+    }
+
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    a, button {
+        text-decoration: none;
+        color: black;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    a:hover, button:hover {
+        background-color: lightgray;
+    }
+
+  </style>
+</head>
+<body>
+<div>
+    <button><a href="index.html">back</a></button>
+    <h1>Additive Cipher</h1>
+    <p>Enter your message:</p>
+    <textarea id="message" rows="4" cols="50"></textarea>
+    <br>
+    <p>Shift value:</p>
+    
+    <input type="number" id="shift" value="1">
+    <br>
+    (Positive for encryption, negative for decryption)
+    <br>
+    <button onclick="encryptDecrypt()">Encrypt/Decrypt</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function encryptDecrypt() {
+      const message = document.getElementById('message').value;
+      const shift = parseInt(document.getElementById('shift').value);
+      const isEncrypt = document.querySelector('button').textContent === 'Encrypt'; // Check button text
+      const result = caesarCipher(message, shift, !isEncrypt);
+      document.getElementById('result').textContent = result;
+    }
+</script>
+</body>
+</html>

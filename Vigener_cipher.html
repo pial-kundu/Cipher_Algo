@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigenère Cipher</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: blueviolet;
+    }
+    .container {
+      background-color: aquamarine;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 450px;
+      animation: fadeIn 1s ease-out;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    textarea, input {
+      width: calc(100% - 20px);
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button><a href="index.html" style="text-decoration: none;">Back</a></button>
+    <h1>Vigenère Cipher</h1>
+
+    <div>
+      <div>
+        <label for="message">Message:</label>
+        <br>
+        <textarea id="message" placeholder="Enter your message here"></textarea>
+      </div>
+      <div>
+        <label for="key">Key:</label>
+        <br>
+        <input type="text" id="key" placeholder="Enter your secret key">
+      </div>
+      <div>
+        <button onclick="encrypt()">Encrypt</button>
+        <button onclick="decrypt()">Decrypt</button>
+      </div>
+      <div>
+        <label for="output">Output:</label>
+        <br>
+        <textarea id="output" readonly></textarea>
+      </div>
+    </div>
+  </div>
+  <script src="vigenercipher.js"></script>
+</body>
+</html>

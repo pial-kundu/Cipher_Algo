@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affine Cipher</title>
+    <script src="affine.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: blueviolet;
+            margin: 0;
+            border: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            animation: bgAnimation 5s infinite alternate;
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                background-color: blueviolet;
+            }
+            100% {
+                background-color: darkorchid;
+            }
+        }
+
+        #container {
+            background-color: aquamarine;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            animation: slideIn 1s ease forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: black;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: lightgray;
+            color: black;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button><a href="index.html">Back</a></button>
+        <h1>Affine Cipher</h1>
+        <p>Enter your message:</p>
+        <textarea id="plaintext" rows="4" cols="50" placeholder="Enter text to encrypt/decrypt"></textarea>
+        <br>
+        <label for="a">Enter 'a' (Coprime with 26):</label>
+        <input type="number" id="a" placeholder="Enter 'a'">
+        <br>
+        <label for="b">Enter 'b':</label>
+        <input type="number" id="b" placeholder="Enter 'b'">
+        <br>
+        <button onclick="encrypt()">Encrypt</button>
+        <button onclick="decrypt()">Decrypt</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Paste the JavaScript code here
+
+        function encrypt() {
+            const plaintext = document.getElementById('plaintext').value.toUpperCase();
+            const a = parseInt(document.getElementById('a').value);
+            const b = parseInt(document.getElementById('b').value);
+
+            const encryptedText = affineEncrypt(plaintext, a, b);
+            document.getElementById('result').innerText = "Encrypted: " + encryptedText;
+        }
+
+        function decrypt() {
+            const ciphertext = document.getElementById('plaintext').value.toUpperCase();
+            const a = parseInt(document.getElementById('a').value);
+            const b = parseInt(document.getElementById('b').value);
+
+            const decryptedText = affineDecrypt(ciphertext, a, b);
+            document.getElementById('result').innerText = "Decrypted: " + decryptedText;
+        }
+    </script>
+</body>
+</html>

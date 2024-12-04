@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: blueviolet;
+            animation: bgAnimation 5s infinite alternate;
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                background-color: blueviolet;
+            }
+            100% {
+                background-color: darkorchid;
+            }
+        }
+
+        .container {
+            background-color: aquamarine;
+            max-width: 90%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            animation: slideIn 1s ease forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            margin: 10px 0;
+            color: #fff; /* White */
+            transition: color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: #12485e; /* Amber */
+            transition: color 0.3s ease;
+            animation: linkAnimation 0.5s ease;
+        }
+
+        a:hover {
+            color: #ff6f00; /* Orange */
+        }
+
+
+        a {
+            position: relative;
+        }
+
+        a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffc107; /* Amber */
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+        }
+
+        a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        @keyframes linkAnimation {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 80%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div><h2><a href="Additive_Cipher.html">Additive Cipher</a></h2></div>
+        <div><h2><a href="Multiplicative_Cipher.html">Multiplicative Cipher</a></h2></div>
+        <div><h2><a href="affine.html">Affine Cipher</a></h2></div>
+        <div><h2><a href="Vigener_cipher.html">Vigener Cipher</a></h2></div>
+    </div>
+</body>
+</html>
